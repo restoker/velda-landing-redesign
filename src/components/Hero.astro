@@ -1,0 +1,226 @@
+---
+import { SPONSORS } from "@/consts/sponsors"
+---
+
+<section
+	class="relative min-h-screen w-full overflow-hidden bg-[var(--background-color)] pt-10 pb-20"
+>
+	<!-- <img
+		src="/img/background-la-velada.webp"
+		class="animate-fade-in pointer-events-none fixed top-0 z-0 h-screen w-screen object-cover select-none"
+		draggable="false"
+	/> -->
+	  <video class="fixed top-0 z-0 h-svh w-svw object-cover select-none" preload="true" autoplay loop muted >
+		<!-- <source src="./video/bg-velada.mp4" type="video/mp4"> -->
+		<source src="./video/lavelda.mp4" type="video/mp4">
+		<!-- <source src="./video/bg-velada.webm" type="video/webm"> -->
+		<source src="./video/lavelda.webm" type="video/webm">
+	  Your browser does not support the video tag 🥲.
+	  </video>
+	<h1 class="sr-only">Presentación de la Velada del Año V</h1>
+
+	<!-- Sponsors -->
+	<div
+		class="animate-fade-in animate-delay-700 relative mx-auto mb-2 flex max-w-6xl flex-wrap items-center justify-center gap-2 px-4 md:gap-4"
+	>
+		{
+			SPONSORS.filter(({ id }) =>
+				["alsa", "spotify", "revolut", "vicio", "coca-cola"].includes(id)
+			).map(({ id, name, url, image, icon: Icon }) => (
+				<a
+					class="text-[var(--color-wine)] opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-105"
+					href={url}
+					target="_blank"
+					rel="noopener noreferrer"
+					title={`Visita la página del patrocinador ${name}`}
+					aria-label={`Link con el logo de ${name} que lleva a ${url}`}
+				>
+					<Icon width={image.width} height={image.height} />
+				</a>
+			))
+		}
+	</div>
+
+	<!-- Secondary Sponsors Row -->
+	<div
+		class="animate-fade-in animate-delay-800 relative mx-auto mb-7 flex max-w-4xl flex-wrap items-center justify-center gap-2 px-4 md:mb-20 md:gap-4 mix-blend-darken"
+	>
+		{
+			SPONSORS.filter(({ id }) =>
+				["infojobs", "grefusa", "cerave", "nothing", "mahou", "maxibon"].includes(id)
+			).map(({ name, url, image, icon: Icon }) => (
+				<a
+					class="text-[var(--color-wine)] opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-105"
+					href={url}
+					target="_blank"
+					rel="noopener noreferrer"
+					title={`Visita la página del patrocinador ${name}`}
+					aria-label={`Link con el logo de ${name} que lleva a ${url}`}
+				>
+					<Icon width={image.width} height={image.height} />
+				</a>
+			))
+		}
+	</div>
+
+	<div class="relative mx-auto max-w-7xl px-4 text-center">
+		<!-- Logo -->
+		<div class="animate-fade-in-up animate-delay-400 relative mb-4 flex justify-center md:mb-8">
+			<img
+				src="/img/logo-la-velada-v.webp"
+				alt="Logo de La Velada Del Año"
+				class="relative z-10 w-[200px] select-none md:w-[300px] lg:w-[240px]"
+				draggable="false"
+			/>
+				<div class="arrow arrow-first"></div>
+				<div class="arrow arrow-second"></div>
+		</div>
+
+		<div
+			class="animate-fade-in-up animate-delay-700 my-20 flex w-full items-center justify-center md:my-40 mix-blend-difference"
+		>
+			<p
+				class="text-white max-w-[64ch] -skew-x-6 rounded px-4 py-2 text-center text-base text-balance uppercase md:px-8 md:py-4 md:text-xl font-bold mix-blend-darken"
+			>
+				Próximamente desarrollaremos la web oficial en 
+				<a
+					href="https://twitch.tv/midudev" class="text-indigo-500 glitch"
+					target="_blank">twitch.tv/<span class="font-medium text-cyan-500">
+						midudev
+					</span>
+					
+				</a>
+			</p>
+		</div>
+	</div>
+
+	<!-- Bottom Info -->
+	<div
+		class="animate-fade-in animate-delay-700 absolute right-0 bottom-2 left-0 z-10 flex flex-col justify-between px-4 text-[var(--color-wine)] sm:bottom-4 sm:px-8 md:flex-row md:px-16"
+	>
+		<div class="text-stroke mb-2 md:mb-0">
+			<p class="text-center text-sm leading-tight font-bold md:text-lg">26 DE JULIO</p>
+			<p class="text-center text-base leading-tight font-normal md:text-xl">
+				TWITCH.TV/<span class="font-bold">IBAI</span>
+			</p>
+		</div>
+
+		<div class="text-stroke text-right">
+			<p class="text-center text-sm leading-tight font-normal md:text-lg">
+				ESTADIO <span class="font-medium">LA CARTUJA</span>
+			</p>
+			<p class="text-center text-base leading-tight font-medium md:text-xl">SEVILLA</p>
+		</div>
+	</div>
+</section>
+
+<script>
+	import { PowerGlitch } from 'powerglitch';
+
+	PowerGlitch.glitch('.glitch', { 
+			"playMode": "hover",
+			"optimizeSeo": true,
+			"createContainers": true,
+			"hideOverflow": false,
+			"timing": {
+				"duration": 250,
+				"iterations": 1,
+				"easing": "ease-in-out"
+			},
+			"glitchTimeSpan": {
+				"start": 0,
+				"end": 1
+			},
+			"shake": {
+				"velocity": 1,
+				"amplitudeX": 0.4,
+				"amplitudeY": 0.4
+			},
+			"slice": {
+				"count": 6,
+				"velocity": 15,
+				"minHeight": 0.02,
+				"maxHeight": 0.15,
+				"hueRotate": true
+			},
+			"pulse": {
+				"scale": 1
+			}
+	 })
+</script>
+
+<style>
+	/* Add any additional styles if needed */
+	a {
+		transition: transform 0.3s ease;
+	}
+
+	a:hover,
+	a:focus {
+		transform: scale(1.05);
+	}
+
+	@media (prefers-reduced-motion) {
+		a {
+			transition: none;
+		}
+
+		a:hover,
+		a:focus {
+			transform: none;
+		}
+	}
+
+	.arrow {
+		opacity: 0;
+		position: absolute;
+		left: 50%;
+		top: 55%;
+		transform-origin: 50% 50%;
+		transform: translate3d(-50%, -50%, 0);
+	}
+
+	.arrow-first {
+		animation: arrow-movement 2s ease-in-out infinite;
+	}
+	.arrow-second {
+		animation: arrow-movement 2s ease-in-out 1s infinite;
+	}
+
+	.arrow:before,
+	.arrow:after {
+		background: #25232366;
+		content: '';
+		display: block;
+		height: 2px; 
+		position: absolute;
+		top: 90px;
+		left: -8px;
+		width: 18px;
+	}
+
+	.arrow:before {
+		transform: rotate(45deg) translateX(-23%);
+		transform-origin: top left;
+	}
+
+	.arrow:after {
+		transform: rotate(-45deg) translateX(23%);
+		transform-origin: top right;
+	}
+
+	@keyframes arrow-movement {
+		0% { 
+			opacity: 0;
+			top: 45%;
+		}
+		70% {
+			opacity: 1;
+		}
+		100% { 
+			opacity: 0;
+		}
+	}
+
+</style>
+
