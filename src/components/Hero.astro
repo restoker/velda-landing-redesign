@@ -16,9 +16,9 @@ import { SPONSORS } from "@/consts/sponsors"
 
 	<!-- Sponsors -->
 	<div
-		class="animate-fade-in relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] mx-auto max-w-7xl"
+		class="animate-fade-in animate-delay-700 relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] mx-auto max-w-7xl"
 	>
-		<div class="flex gap-16 animate-infinite-scroll">
+		<div class="flex gap-16 animate-infinite-scroll items-center">
 			{
 				SPONSORS.map(({ id, name, url, image, icon: Icon }) => (
 					<a
@@ -34,7 +34,7 @@ import { SPONSORS } from "@/consts/sponsors"
 				))
 			}
 		</div>
-		<div class="ml-16 flex gap-16 animate-infinite-scroll" aria-hidden={'true'}>
+		<div class="ml-16 flex gap-16 animate-infinite-scroll items-center" aria-hidden={'true'}>
 			{
 				SPONSORS.map(({ id, name, url, image, icon: Icon }) => (
 					<a
