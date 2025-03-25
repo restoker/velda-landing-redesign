@@ -50,6 +50,19 @@
 	--color-twitch-ice: #f0f0ff;
 	--breakpoint-xs: 360px;
 	--breakpoint-3xl: 1650px;
+
+	--animate-infinite-scroll: infinite-scroll 25s linear infinite;
+
+	@keyframes infinite-scroll {
+	  from {
+		transform: translateX(0);
+	  }
+  
+	  to {
+		transform: translateX(-100%);
+	  }
+  
+	}
 }
 
 /* Root variables */
