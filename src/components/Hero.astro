@@ -3,13 +3,8 @@ import { SPONSORS } from "@/consts/sponsors"
 ---
 
 <section
-	class="relative min-h-screen w-full overflow-hidden bg-[var(--background-color)] pt-10 pb-20"
+	class="relative min-h-screen w-full overflow-hidden bg-[var(--background-color)] pt-10 pb-20 flex flex-col items-center"
 >
-	<!-- <img
-		src="/img/background-la-velada.webp"
-		class="animate-fade-in pointer-events-none fixed top-0 z-0 h-screen w-screen object-cover select-none"
-		draggable="false"
-	/> -->
 	  <video class="fixed top-0 z-0 h-svh w-svw object-cover select-none" preload="true" autoplay loop muted >
 		<!-- <source src="./video/bg-velada.mp4" type="video/mp4"> -->
 		<source src="./video/lavelda.mp4" type="video/mp4">
@@ -21,49 +16,44 @@ import { SPONSORS } from "@/consts/sponsors"
 
 	<!-- Sponsors -->
 	<div
-		class="animate-fade-in animate-delay-700 relative mx-auto mb-2 flex max-w-6xl flex-wrap items-center justify-center gap-2 px-4 md:gap-4"
+		class="animate-fade-in animate-delay-700 relative inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] mx-auto max-w-7xl"
 	>
-		{
-			SPONSORS.filter(({ id }) =>
-				["alsa", "spotify", "revolut", "vicio", "coca-cola"].includes(id)
-			).map(({ id, name, url, image, icon: Icon }) => (
-				<a
-					class="text-[var(--color-wine)] opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-105"
-					href={url}
-					target="_blank"
-					rel="noopener noreferrer"
-					title={`Visita la página del patrocinador ${name}`}
-					aria-label={`Link con el logo de ${name} que lleva a ${url}`}
-				>
-					<Icon width={image.width} height={image.height} />
-				</a>
-			))
-		}
+		<div class="flex gap-16 animate-infinite-scroll">
+			{
+				SPONSORS.map(({ id, name, url, image, icon: Icon }) => (
+					<a
+						class="text-[var(--color-wine)] opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-105"
+						href={url}
+						target="_blank"
+						rel="noopener noreferrer"
+						title={`Visita la página del patrocinador ${name}`}
+						aria-label={`Link con el logo de ${name} que lleva a ${url}`}
+					>
+						<Icon width={image.width} height={image.height} />
+					</a>
+				))
+			}
+		</div>
+		<div class="ml-16 flex gap-16 animate-infinite-scroll" aria-hidden={'true'}>
+			{
+				SPONSORS.map(({ id, name, url, image, icon: Icon }) => (
+					<a
+						class="text-[var(--color-wine)] opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-105"
+						href={url}
+						target="_blank"
+						rel="noopener noreferrer"
+						title={`Visita la página del patrocinador ${name}`}
+						aria-label={`Link con el logo de ${name} que lleva a ${url}`}
+					>
+						<Icon width={image.width} height={image.height} />
+					</a>
+				))
+			}
+		</div>
+
 	</div>
 
-	<!-- Secondary Sponsors Row -->
-	<div
-		class="animate-fade-in animate-delay-800 relative mx-auto mb-7 flex max-w-4xl flex-wrap items-center justify-center gap-2 px-4 md:mb-20 md:gap-4 mix-blend-darken"
-	>
-		{
-			SPONSORS.filter(({ id }) =>
-				["infojobs", "grefusa", "cerave", "nothing", "mahou", "maxibon"].includes(id)
-			).map(({ name, url, image, icon: Icon }) => (
-				<a
-					class="text-[var(--color-wine)] opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-105"
-					href={url}
-					target="_blank"
-					rel="noopener noreferrer"
-					title={`Visita la página del patrocinador ${name}`}
-					aria-label={`Link con el logo de ${name} que lleva a ${url}`}
-				>
-					<Icon width={image.width} height={image.height} />
-				</a>
-			))
-		}
-	</div>
-
-	<div class="relative mx-auto max-w-7xl px-4 text-center">
+	<div class="relative mx-auto max-w-7xl px-4 text-center mt-4">
 		<!-- Logo -->
 		<div class="animate-fade-in-up animate-delay-400 relative mb-4 flex justify-center md:mb-8">
 			<img
@@ -80,12 +70,12 @@ import { SPONSORS } from "@/consts/sponsors"
 			class="animate-fade-in-up animate-delay-700 my-20 flex w-full items-center justify-center md:my-40 mix-blend-difference"
 		>
 			<p
-				class="text-white max-w-[64ch] -skew-x-6 rounded px-4 py-2 text-center text-base text-balance uppercase md:px-8 md:py-4 md:text-xl font-bold mix-blend-darken"
+				class="text-white max-w-[64ch] -skew-x-6 rounded px-4 py-2 text-center text-base text-balance uppercase md:px-8 md:py-4 md:text-2xl font-bold"
 			>
-				Próximamente desarrollaremos la web oficial en 
+				Próximamente desarrollaremos la web oficial en: 
 				<a
 					href="https://twitch.tv/midudev" class="text-indigo-500 glitch"
-					target="_blank">twitch.tv/<span class="font-medium text-cyan-500">
+					target="_blank">twitch.tv/<span class="font-medium text-cyan-300">
 						midudev
 					</span>
 					
