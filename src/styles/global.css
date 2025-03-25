@@ -51,7 +51,7 @@
 	--breakpoint-xs: 360px;
 	--breakpoint-3xl: 1650px;
 
-	--animate-infinite-scroll: infinite-scroll 25s linear infinite;
+	--animate-infinite-scroll: infinite-scroll 80s linear infinite;
 
 	@keyframes infinite-scroll {
 	  from {
